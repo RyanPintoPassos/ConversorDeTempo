@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Conversor de Tempo</title>
+    </head>
+
+    <body>
+        
+    <h1>Conversor de Tempo</h1>
+    <label for="seg">Segundos:</label>
+    <input type="number" id="seg">
+    <br><br>
+    <button onclick="calcular()" id="calcular">Calcular tempo</button>
+
+    <p>Tempo: <span id="resultado"></span></p>
+
+    <script>
+        function calcular() {
+            const seg = parseFloat(document.getElementById('seg').value);
+            const seg2 = parseInt(seg);
+
+            const horas = Math.floor(seg2 / 3600);
+            const minutos = Math.floor((seg2 % 3600) / 60);
+            const seg3 = seg2 % 60;
+
+            const resultado = `${horas}:${minutos}:${seg3}`
+            document.getElementById('resultado').textContent = resultado;
+
+        }
+    </script>
+    </body>
+</html>
